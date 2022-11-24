@@ -4,3 +4,5 @@ class List < ApplicationRecord
   validates :name, uniqueness: true
   validates :name, presence: true
 end
+# List is a category
+# Bookmark is a movie
