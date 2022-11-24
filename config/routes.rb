@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   # end
   resources :lists do
     # resources :movies, only: %i[new create]
-    resources :bookmarks, only: %i[new create]
+    resources :bookmarks #, only: %i[new create]
   end
 end
