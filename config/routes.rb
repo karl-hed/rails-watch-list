@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   #   # end
   # end
   resources :lists do
-    resources :movies, only: %i[new create]
+    # resources :movies, only: %i[new create]
+    resources :bookmarks, only: %i[new create]
   end
-  resources :bookmarks, only: %i[new create]
 end
