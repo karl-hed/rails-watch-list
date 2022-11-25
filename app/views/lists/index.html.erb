@@ -1,5 +1,4 @@
 <!-- NAVBAR -->
-
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
@@ -26,8 +25,6 @@
     </div>
   </div>
 </div>
-
-
 <!-- END NAVBAR -->
 
 
@@ -45,37 +42,9 @@
 <!-- CARD -->
 <div class="container">
   <div class="cards mt-5">
-
     <% @lists.each do |list| %>
-      <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"> %>
-      <%# <div class="card-category"> %>
-      <!--
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image_url(<%= link_to list.name, list_path(list) %>)">
-
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image_url(<%= cl_image_tag list.photo.key, height: 200, width: 300, crop: :fill %>)">
-      -->
-
-
       <a href="<%= list_path(list) %>"> <%= cl_image_tag list.photo.key, height: 180, width: 180, crop: :fill %></a>
-      <%# <%= link_to list.name %>
-        <%# <p><%= link_to list.name, list_path(list) </p> %>
-        <%# <%= raise %>
-        <!--
-        <%= cl_image_tag list.photo.key, height: 200, width: 300, crop: :fill %>
-      </div>
-        -->
     <% end %>
-
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      Lunch
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
-    </div>
   </div>
 </div>
-
-
 <!-- END CARD -->
