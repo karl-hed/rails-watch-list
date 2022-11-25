@@ -3,6 +3,52 @@
 <% @list.movies.each do |movie| %>
   <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
 
+  <div class="container">
+    <%= movie.title %>
+    <div>
+      <%= image_tag(movie.poster_url, size:400, class:"card-category mt-5", crop: :fill) %>
+      <p><%= movie.overview %></p>
+    </div>
+
+  </div>
+
+
+
+  <div class="container">
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>Title here</h2>
+          <p>Short description here!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2>Product name</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <%= link_to 'Delete Bookmark',
+        bookmark_path(bookmark),
+        data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+        class: "btn btn-primary"
+    %>
+  </div>
+
+  <!--
   <p>
     <div class="container">
       <%= movie.title %>
@@ -11,9 +57,6 @@
       <p>
         <%= movie.overview %>
       </p>
-      <%# <%= cl_image_tag("pscretfj5htikzkky0bl", width: 150) %>
-      <%# <%= raise %>
-      <%# <%= cl_image_tag @list.photo.key, height: 200, width: 300, crop: :fill %>
       <div class="container">
         <%= link_to 'Delete Bookmark',
             bookmark_path(bookmark),
@@ -21,8 +64,9 @@
             class: "btn btn-primary"
         %>
       </div>
-      </div>
+    </div>
   </p>
+  -->
 <% end %>
 
 <%= link_to 'Back', lists_path %>
