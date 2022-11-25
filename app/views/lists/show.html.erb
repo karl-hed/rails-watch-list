@@ -2,18 +2,26 @@
 <%= @list.name %>
 <% @list.movies.each do |movie| %>
   <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+
   <p>
-    <%= movie.title %>
-    <br>
-    <%= image_tag(movie.poster_url, size:200) %>
-    <%= cl_image_tag("pscretfj5htikzkky0bl", width: 150) %>
     <div class="container">
-      <%= link_to 'Delete Bookmark',
-          bookmark_path(bookmark),
-          data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
-          class: "btn btn-primary"
-      %>
-    </div>
+      <%= movie.title %>
+      <br>
+      <%= image_tag(movie.poster_url, size:200) %>
+      <p>
+        <%= movie.overview %>
+      </p>
+      <%# <%= cl_image_tag("pscretfj5htikzkky0bl", width: 150) %>
+      <%# <%= raise %>
+      <%= cl_image_tag @list.photo.key, height: 200, width: 300, crop: :fill %>
+      <div class="container">
+        <%= link_to 'Delete Bookmark',
+            bookmark_path(bookmark),
+            data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+            class: "btn btn-primary"
+        %>
+      </div>
+      </div>
   </p>
 <% end %>
 
