@@ -1,4 +1,9 @@
-<h1>My Lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>List of movies</h1>
+  </div>
+</div>
+
 <% @lists.each do |list| %>
   <p><%= link_to list.name, list_path(list) %></p>
   <%# <%= raise %>
