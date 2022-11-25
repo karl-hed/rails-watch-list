@@ -28,18 +28,25 @@
 
 
 
+  <br>
   <div class="container">
     <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <%= image_tag(movie.poster_url) %>
+      <!-- img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" / -->
       <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
+        <h2><%= movie.title %></h2>
+        <p><%= movie.overview %></p>
       </div>
+      <%= link_to 'Delete Bookmark',
+        bookmark_path(bookmark),
+        data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+        class: "btn btn-primary"
+      %>
     </div>
   </div>
 
 
-
+  <br>
   <div class="container">
     <%= link_to 'Delete Bookmark',
         bookmark_path(bookmark),
